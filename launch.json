@@ -1,0 +1,22 @@
+{
+  "kind": "evm_project",
+  "token": {
+    "contract": "LaunchToken",
+    "name": "Pawn",
+    "symbol": "PAWN",
+    "decimals": 18
+  },
+  "contracts": [
+    {
+      "contract": "NFTPawnShop",
+      "constructorArgs": []
+    }
+  ],
+  "pool": {
+    "pairedCurrency": "0x0000000000000000000000000000000000000000",
+    "fee": 3000,
+    "tickSpacing": 60,
+    "initialPrice": "79228162514264337593543950336"
+  },
+  "notes": "For Sepolia (11155111). NFTPawnShop provides permissionless ETH loans against ERC-721 collateral with pull payouts; PAWN is only the launch token. Both contracts have nonpayable, zero-argument constructors. NFTPawnShop has no owner, admin or fees and needs no initialization or PAWN balance. The pool pairs with native ETH and has no hook. The factory supplies the LP and MerkleDistributor. Services apply the pinned policy and handle source publication, signed artifact linkage, attestation, admission and deployment. The declared initialPrice is decimal sqrtPriceX96; a policy specifying initialMarketCapWei determines the effective opening price. Lenders must trust each NFT collection: false ownership reports or reverting transfers can cost the lender the principal. Plain NFT transfers outside request() are untracked and unrecoverable."
+}
